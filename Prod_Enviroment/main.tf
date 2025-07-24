@@ -6,6 +6,17 @@ module "resource_group" {
 
 module "resource_group" {
   source = "../infra_resource/azurerm_resource_group"
+  resource_group_name = "alok-rgg0013"
+  location = "japan east"
+}
+module "resource_group" {
+  source = "../infra_resource/azurerm_resource_group"
+  resource_group_name = "alok-20001"
+  location = "japan east"
+}
+
+module "resource_group" {
+  source = "../infra_resource/azurerm_resource_group"
   resource_group_name = "titu-rgg0019"
   location = "japan east"
 }
