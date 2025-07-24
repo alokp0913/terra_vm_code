@@ -4,6 +4,17 @@ module "resource_group" {
   location = "japan east"
 }
 
+module "resource_group" {
+  source = "../infra_resource/azurerm_resource_group"
+  resource_group_name = "titu-rgg0019"
+  location = "japan east"
+}
+module "resource_group" {
+  source = "../infra_resource/azurerm_resource_group"
+  resource_group_name = "titu-rgg0010"
+  location = "japan east"
+}
+
 module "Virtual_Network" {
     depends_on = [ module.resource_group ]
     source = "../infra_resource/azurerm_vnet"
@@ -11,6 +22,16 @@ module "Virtual_Network" {
     resource_group_name = "todo-rgg0013"
     location = "japan east"
     address_space = ["192.168.1.0/24"]
+  
+}
+
+module "Virtual_Network" {
+    depends_on = [ module.resource_group ]
+    source = "../infra_resource/azurerm_vnet"
+    virtual_network_name = "titu-vnet0013"
+    resource_group_name = "titu-rgg0010"
+    location = "japan east"
+    address_space = ["192.168.2.0/24"]
   
 }
 
